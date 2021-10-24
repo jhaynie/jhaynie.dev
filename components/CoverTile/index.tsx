@@ -28,7 +28,7 @@ const CoverTile = ({ site, content, big }: { site: ISite; content: IContent; big
 							className={`absolute bottom-0 left-0 right-0 flex items-center ${big ? 'h-[140px]' : 'h-[100px]'}`}
 						>
 							<div
-								className="opacity-80 absolute inset-0 z-[99]"
+								className="opacity-80 absolute inset-0 z-1"
 								style={{
 									background: 'radial-gradient( circle, #009 40%, #000 100%)',
 								}}
@@ -37,7 +37,7 @@ const CoverTile = ({ site, content, big }: { site: ISite; content: IContent; big
 								<div className={`${big ? 'text-2xl' : 'text-sm'} font-semibold`}>{content.title}</div>
 								<div className={`${big ? 'text-sm' : 'text-xs'} mt-1`}>{content.headline}</div>
 							</div>
-							<div className="absolute -top-8 right-3 z-[101] rounded-full bg-white h-12 w-12 text-sm flex flex-col items-center justify-center font-medium text-purple-800">
+							<div className="absolute -top-8 right-3 z-[2] rounded-full bg-white h-12 w-12 text-sm flex flex-col items-center justify-center font-medium text-purple-800">
 								<div className="font-bold text-base">{top}</div>
 								<div className="-mt-1">{bottom}</div>
 							</div>
