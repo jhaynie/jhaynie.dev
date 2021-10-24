@@ -1,0 +1,151 @@
+/*
+ * Override default theme
+ */
+
+/* regular theme */
+:root {
+	/*
+	 * global
+	 */
+	/* --page-bg-color: white; */
+	/* --page-text-color: #3f3f46; */
+	/* --page-secondary-text-color: #a1a1aa; */
+	/* --page-highlight-color: #6366f1; */
+	/* --page-error-color: #dc2626; */
+
+	/*
+	 * header
+	 */
+	/* --header-bg-color: var(--page-bg-color); */
+	/* --header-title-color: var(--page-text-color); */
+	/* --header-description-color: var(--page-secondary-text-color); */
+	/* --header-subscribe-color: var(--page-highlight-color); */
+	/* --header-control-color: #d4d4d8; */
+
+	/*
+	 * content section
+	 */
+	/* --section-bg-color: #fafafa; */
+	/* --section-border-color: #e4e4e7; */
+
+	/*
+	 * content card
+	 */
+	/* --card-bg-color: white; */
+	/* --card-title-color: var(--page-text-color); */
+	/* --card-date-color: var(--page-secondary-text-color); */
+	/* --card-summary-color: #71717a; */
+	/* --card-info-color: var(--page-secondary-text-color); */
+	/* --card-link-color: var(--page-highlight-color); */
+	/* --card-empty-gradient-from: #4338ca; */
+	/* --card-empty-gradient-to: #6366f1; */
+
+	/*
+	 * article
+	 */
+	/* --article-bg-color: var(--page-bg-color); */
+	/* --article-text-color: var(--page-text-color); */
+	/* --article-info-color: #71717a; */
+	/* --article-link-color: var(--page-highlight-color); */
+	/* --article-border-color: transparent; */
+	/* --article-block-bg-color: var(--section-bg-color); */
+
+	/*
+	 * footer
+	 */
+	--footer-bg-color: #fff;
+	/* --footer-text-color: #71717a; */
+}
+
+/* dark theme override */
+.dark:root {
+	/* --page-bg-color: #18181b; */
+	/* --page-text-color: #f4f4f5; */
+	/* --page-secondary-text-color: #a1a1aa; */
+	/* --page-highlight-color: #818cf8; */
+
+	/* --header-control-color: #71717a; */
+
+	/* --section-bg-color: #202023; */
+	/* --section-border-color: #3f3f46; */
+
+	/* --card-bg-color: #27272a; */
+	/* --card-summary-color: #d4d4d8; */
+
+	/* --article-info-color: #d4d4d8; */
+
+	--footer-bg-color: #fff;
+}
+
+.PoweredByPinpoint span {
+	mix-blend-mode: normal !important;
+	@apply !text-gray-500;
+}
+
+.Pinpoint.Page .sidebarWrapper.before {
+	@apply hidden;
+}
+
+.Pinpoint.Entry.Page.Prebuilt .entryWrapper .entry {
+	border-top: none;
+	padding-top: 0;
+}
+
+.Pinpoint.Page .Pinpoint.constraint {
+	@apply !w-full max-w-[100%] p-0;
+}
+
+@media (min-width: 768px) {
+	.Pinpoint .paginationWrapper .Pagination {
+		margin-left: 0 !important;
+	}
+}
+
+@tailwind utilities;
+
+@layer utilities {
+	.bg-size-2em {
+		background-size: 100% 0.2em;
+	}
+	.bg-near-bottom {
+		background-position: 0 112%;
+	}
+	.bg-growing-underline {
+		@apply bg-no-repeat bg-near-bottom bg-size-2em transition-all duration-200;
+	}
+}
+
+.Pinpoint * {
+	font-family: 'Barlow', 'ui-sans-serif', 'system-ui', '-apple-system';
+}
+
+.SocialMedia.Bar svg {
+	width: 20px;
+	height: 20px;
+}
+
+.Pinpoint.SocialMedia.Bar.wide {
+	column-gap: 2.5rem;
+}
+
+.Pinpoint.SocialMedia.Bar.narrow {
+	@apply mt-2;
+	column-gap: 0.5rem;
+}
+
+.Pinpoint.SocialMedia.Bar.narrow .ShareItem {
+	@apply w-7 h-7 transition duration-300;
+}
+
+.Pinpoint.SocialMedia.Bar.narrow svg {
+	width: 15px;
+	height: 15px;
+}
+
+.Pinpoint article .Pinpoint.covermedia .image {
+	@apply items-center justify-center;
+}
+
+.Pinpoint article .Pinpoint.covermedia .image > img {
+	max-height: 540px;
+}
