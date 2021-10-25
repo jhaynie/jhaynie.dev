@@ -105,6 +105,9 @@ const Page = (props: PageProps) => {
 	const { site, title, subtitle, children, contentId, date, social, clapCount, sessionClapCount, onClap } = props;
 	const [reload, setReload] = useState(0);
 	const [showIndicator, setShowIndicator] = useState(false);
+	const [href, setHref] = useState('');
+
+	useEffect(() => setHref(location.href), []);
 
 	useEffect(() => {
 		const div = ref.current;
@@ -158,18 +161,23 @@ const Page = (props: PageProps) => {
 						</div>
 						<SearchBox site={site} className="order-1 lg:order-2 ml-auto" ignoreContentId={contentId} />
 					</header>
-					<div className="flex flex-row items-center w-full">
-						{social && typeof window !== 'undefined' && (
-							<SocialMediaBar className="narrow">
-								<TwitterShare href={location.href} newTab />
-								<LinkedInShare href={location.href} newTab />
-								<FacebookShare href={location.href} newTab />
-							</SocialMediaBar>
+					<div className="flex flex-row items-center justify-center w-full">
+						{social && (
+							<div className="self-center">
+								<SocialMediaBar className="narrow">
+									<TwitterShare href={href} newTab />
+									<LinkedInShare href={href} newTab />
+									<FacebookShare href={href} newTab />
+								</SocialMediaBar>
+							</div>
 						)}
 						{onClap && (
-							<div className="ml-auto">
-								<Clap clapCount={clapCount!} sessionClapCount={sessionClapCount!} handleClap={onClap!} />
-							</div>
+							<Clap
+								className="ml-auto"
+								clapCount={clapCount!}
+								sessionClapCount={sessionClapCount!}
+								handleClap={onClap!}
+							/>
 						)}
 					</div>
 					<div className="mt-10 w-full">{children}</div>
