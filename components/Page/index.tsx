@@ -114,7 +114,7 @@ const Page = (props: PageProps) => {
 		if (div) {
 			const height = div.getBoundingClientRect().height;
 			const onscroll = () => {
-				const top = div.scrollTop;
+				const top = document.scrollingElement?.scrollTop || div.scrollTop; // safari fix
 				const wtop = window.innerHeight * 0.3;
 				setShowIndicator(top >= wtop && top + height !== div.scrollHeight);
 			};
