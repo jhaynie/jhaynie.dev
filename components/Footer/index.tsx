@@ -13,9 +13,9 @@ const Footer = (props: FooterProps) => {
 	return (
 		<div className={className}>
 			<SubscribeForm />
-			<footer className="my-10 py-4 text-sm text-gray-400 flex items-center justify-between w-full border-t">
-				<div>All content is &copy; Jeff Haynie.</div>
-				<div className="ml-auto">
+			<footer className="my-10 py-4 text-sm text-gray-400 flex flex-col lg:!flex-row w-full border-t">
+				<div className="self-center">All content is &copy; Jeff Haynie.</div>
+				<div className="self-center pt-4 lg:pt-0 lg:ml-auto">
 					<PoweredByPinpoint siteId={props.site.id} />
 				</div>
 			</footer>

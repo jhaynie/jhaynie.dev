@@ -10,7 +10,7 @@ import config from '../pinpoint.config';
 interface HomeProps {
 	site: ISite;
 	content: IContent[];
-	after?: IContent;
+	after?: { title: string };
 	pageCount: number;
 }
 
@@ -56,7 +56,11 @@ export async function getServerSideProps() {
 		props: {
 			site,
 			content,
-			after,
+			after: after
+				? {
+						title: after?.title,
+				  }
+				: null,
 			pageCount,
 		},
 	};

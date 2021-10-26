@@ -114,7 +114,12 @@ const Page = (props: PageProps) => {
 		if (div) {
 			const height = div.getBoundingClientRect().height;
 			const onscroll = () => {
-				const top = document.scrollingElement?.scrollTop || div.scrollTop; // safari fix
+				const top = Math.max(
+					window.pageYOffset,
+					document.documentElement.scrollTop,
+					document.body.scrollTop,
+					div.scrollTop
+				);
 				const wtop = window.innerHeight * 0.3;
 				setShowIndicator(top >= wtop && top + height !== div.scrollHeight);
 			};
@@ -125,8 +130,8 @@ const Page = (props: PageProps) => {
 
 	const scrollToTop = () => {
 		if (ref.current) {
-			const dims = ref.current.getBoundingClientRect();
-			ref.current.scrollTop = dims.top - 100; // since the header is a bit below the top, add some margin above it
+			ref.current.scrollTop = 0;
+			document.body.scrollTop = 0; // for safari
 		}
 	};
 
@@ -148,7 +153,7 @@ const Page = (props: PageProps) => {
 			</NextHead>
 			<div className="Page w-full h-screen flex flex-col lg:!flex-row relative">
 				<Menu />
-				<div ref={ref} className="flex flex-col px-10 py-4 w-full h-full overflow-auto">
+				<div ref={ref} className="flex flex-col px-4 lg:px-10 py-4 w-full h-full overflow-auto">
 					<header className="flex items-start flex-col lg:!flex-row">
 						<div className="order-2 lg:order-1">
 							<div className="flex flex-col items-center w-full">
@@ -159,7 +164,11 @@ const Page = (props: PageProps) => {
 								</div>
 							</div>
 						</div>
-						<SearchBox site={site} className="order-1 lg:order-2 ml-auto" ignoreContentId={contentId} />
+						<SearchBox
+							site={site}
+							className="order-1 lg:order-2 lg:ml-auto mb-2 lg:mb-auto"
+							ignoreContentId={contentId}
+						/>
 					</header>
 					<div className="flex flex-row items-center justify-center w-full">
 						{social && (
