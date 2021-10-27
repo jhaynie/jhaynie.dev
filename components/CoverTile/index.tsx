@@ -26,7 +26,7 @@ const CoverTile = ({ site, content, big }: { site: ISite; content: IContent; big
 						)}
 						<div
 							className={`absolute bottom-0 left-0 right-0 flex items-center ${
-								big ? 'h-[90px] lg:h-[140px]' : 'h-[100px]'
+								big ? 'h-[90px] md:!h-[120px]' : 'h-[100px]'
 							}`}
 						>
 							<div
@@ -36,10 +36,10 @@ const CoverTile = ({ site, content, big }: { site: ISite; content: IContent; big
 								}}
 							></div>
 							<div className="text-white absolute inset-0 p-4 flex flex-col items-start z-[100]">
-								<div className={`${big ? 'text-lg lg:text-2xl' : 'text-sm'} font-semibold`}>
+								<div className={`${big ? 'text-lg md:!text-3xl' : 'text-sm'} font-semibold`}>
 									{content.title}
 								</div>
-								<div className={`${big ? 'text-xs lg:text-sm' : 'text-xs'} mt-1`}>{content.headline}</div>
+								<div className={`${big ? 'text-xs md:!text-base' : 'text-xs'} mt-1`}>{content.headline}</div>
 							</div>
 							<div className="absolute -top-8 right-3 z-[2] rounded-full bg-white h-12 w-12 text-sm flex flex-col items-center justify-center font-medium text-purple-800">
 								<div className="font-bold text-base">{top}</div>

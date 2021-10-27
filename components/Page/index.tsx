@@ -159,7 +159,7 @@ const Page = (props: PageProps) => {
 							<div className="flex flex-col items-center w-full">
 								<div>
 									<div className="text-sm text-gray-500">{date}</div>
-									<h1 className="text-xl sm:text-2xl text-[#2b3e7a]">{title}</h1>
+									<h1 className="text-xl sm:!text-2xl text-[#2b3e7a]">{title}</h1>
 									<p className="text-sm text-gray-500 max-w-3xl">{subtitle}</p>
 								</div>
 							</div>
