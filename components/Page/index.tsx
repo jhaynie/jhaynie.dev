@@ -23,6 +23,8 @@ const Menu = () => {
 					src="https://avatars.githubusercontent.com/u/6027?v=4"
 					alt="Jeff Haynie"
 					className="rounded-full w-8 h-8"
+					width={225}
+					height={225}
 				/>
 				<h1 className="text-white font-light underline-blue-500 text-xl w-full flex flex-row items-center justify-start">
 					<div className="ml-4">Hi, I&apos;m Jeff</div>
@@ -49,6 +51,8 @@ const Menu = () => {
 						src="https://avatars.githubusercontent.com/u/6027?v=4"
 						alt="Jeff Haynie"
 						className="rounded-full w-20 h-20 !border-4 !border-white"
+						width={225}
+						height={225}
 					/>
 					<h1 className="text-white font-light underline-blue-500 text-3xl pt-14 flex flex-row items-center justify-start">
 						<span className="pr-4">👋🏼</span> Hi, I&apos;m

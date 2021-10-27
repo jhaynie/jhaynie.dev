@@ -1,5 +1,6 @@
 const colors = require('tailwindcss/colors');
 const defaultTheme = require('tailwindcss/defaultTheme');
+const debug = false;
 
 module.exports = {
 	mode: 'jit',
@@ -121,5 +122,5 @@ module.exports = {
 			padding: ['first', 'last'],
 		},
 	},
-	plugins: [require('@tailwindcss/aspect-ratio'), require('tailwindcss-debug-screens')],
+	plugins: [require('@tailwindcss/aspect-ratio'), debug ? require('tailwindcss-debug-screens') : null].filter(Boolean),
 };
