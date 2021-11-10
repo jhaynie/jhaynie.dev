@@ -27,7 +27,9 @@ const Menu = () => {
 					height={225}
 				/>
 				<h1 className="text-white font-light underline-blue-500 text-xl w-full flex flex-row items-center justify-start">
-					<div className="ml-4">Hi, I&apos;m Jeff</div>
+					<Link href="/">
+						<a className="ml-4">Hi, I&apos;m Jeff</a>
+					</Link>
 					<div className="ml-auto space-x-4 flex flex-row items-center text-sm">
 						<Link href="/">
 							<a>
@@ -161,11 +163,13 @@ const Page = (props: PageProps) => {
 					<header className="flex items-start flex-col lg:!flex-row">
 						<div className="order-2 lg:order-1">
 							<div className="flex flex-col items-center w-full">
-								<div>
-									<div className="text-sm text-gray-500">{date}</div>
-									<h1 className="text-xl sm:!text-2xl text-[#2b3e7a]">{title}</h1>
-									<p className="text-sm text-gray-500 max-w-3xl">{subtitle}</p>
-								</div>
+								<Link href="/">
+									<a>
+										<div className="text-sm text-gray-500">{date}</div>
+										<h1 className="text-xl sm:!text-2xl text-[#2b3e7a]">{title}</h1>
+										<p className="text-sm text-gray-500 max-w-3xl">{subtitle}</p>
+									</a>
+								</Link>
 							</div>
 						</div>
 						<SearchBox
