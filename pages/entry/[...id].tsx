@@ -54,6 +54,7 @@ export default function EntryPage(props: EntryPageProps) {
 	return (
 		<Page
 			site={site}
+			content={content}
 			title={content.title}
 			subtitle={content.headline}
 			date={date}

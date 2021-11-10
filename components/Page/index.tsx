@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from 'react';
 import { faChevronUp, faHome, faInfo } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-	Clap, FacebookShare, Head, Image, ISite, LinkedInShare, SocialMediaBar, TwitterShare
+	Clap, FacebookShare, Head, IContent, Image, ISite, LinkedInShare, SocialMediaBar, TwitterShare
 } from '@pinpt/react';
 import CircleIcon from '../CircleIcon';
 import SearchBox from '../SearchBox';
@@ -99,6 +99,7 @@ interface PageProps {
 	subtitle: string;
 	date?: string;
 	social?: boolean;
+	content?: IContent;
 	contentId?: string;
 	children: React.ReactNode;
 	clapCount?: number;
@@ -108,7 +109,8 @@ interface PageProps {
 
 const Page = (props: PageProps) => {
 	const ref = useRef<HTMLDivElement>(null);
-	const { site, title, subtitle, children, contentId, date, social, clapCount, sessionClapCount, onClap } = props;
+	const { site, title, subtitle, children, contentId, content, date, social, clapCount, sessionClapCount, onClap } =
+		props;
 	const [reload, setReload] = useState(0);
 	const [showIndicator, setShowIndicator] = useState(false);
 	const [href, setHref] = useState('');
@@ -155,7 +157,7 @@ const Page = (props: PageProps) => {
 		<>
 			<NextHead>
 				<title>{title}</title>
-				<Head site={site} />
+				<Head site={site} content={content} />
 			</NextHead>
 			<div className="Page w-full h-screen flex flex-col lg:!flex-row relative">
 				<Menu />
